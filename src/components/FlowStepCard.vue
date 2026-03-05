@@ -12,18 +12,23 @@
         <div class="flow-card-title">{{ step.title }}</div>
         <div class="flow-card-desc">{{ step.desc }}</div>
       </div>
-      <button
-        class="flow-card-video-btn"
-        :style="{ borderColor: step.color, color: step.color, '--hover-bg': step.color }"
-        @click="$emit('open-video', { title: step.title + '操作演示', desc: `了解「${step.title}」的完整操作流程` })"
-      >
+
+    </div>
+
+    <!-- Simple card: just a play button, no sub-cards -->
+    <div
+      v-if="step.simpleCard"
+      class="flow-simple-play"
+      @click="$emit('open-video', { title: step.videoTitle || step.title, desc: `了解「${step.title}」的操作方法` })"
+    >
+      <button class="flow-subcard-btn flow-simple-btn">
         <el-icon><CaretRight /></el-icon>
-        观看视频
+        播放视频
       </button>
     </div>
 
     <!-- Sub-cards -->
-    <div v-if="step.subCards && step.subCards.length" class="flow-subcards" :class="step.colsCls">
+    <div v-else-if="step.subCards && step.subCards.length" class="flow-subcards" :class="step.colsCls">
       <div
         v-for="sub in step.subCards"
         :key="sub.name"
@@ -150,6 +155,10 @@ defineEmits(['open-video'])
   grid-template-columns: repeat(2, 1fr);
 }
 
+.flow-subcards.cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .flow-subcards.cols-4 {
   grid-template-columns: repeat(4, 1fr);
 }
@@ -164,10 +173,11 @@ defineEmits(['open-video'])
   background: #F4F6FA;
   border: 1.5px solid #E5E9F2;
   border-radius: 10px;
-  padding: 14px 16px;
+  padding: 24px 20px;
+  min-height: 140px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
   cursor: pointer;
   transition: all 0.22s cubic-bezier(.4,0,.2,1);
 }
@@ -184,7 +194,9 @@ defineEmits(['open-video'])
   color: #1A1A2E;
   line-height: 1.4;
   flex: 1;
-  white-space: pre-line;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .flow-subcard-btn {
@@ -202,10 +214,29 @@ defineEmits(['open-video'])
   cursor: pointer;
   transition: all 0.22s cubic-bezier(.4,0,.2,1);
   align-self: flex-start;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .flow-subcard-btn:hover {
   background: #1A6FD4;
   color: #fff;
+}
+
+/* Simple card play area */
+.flow-simple-play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 16px 40px;
+  border-top: 1px solid #E5E9F2;
+  flex: 1;
+  min-height: 120px;
+  cursor: pointer;
+}
+
+.flow-simple-btn {
+  padding: 8px 22px;
+  font-size: 13px;
 }
 </style>

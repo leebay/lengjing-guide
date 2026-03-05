@@ -32,7 +32,7 @@ import VideoModal from './components/VideoModal.vue'
 import { panels } from './data/modules.js'
 
 const currentMode = ref('list')
-const activePanelId = ref('home')
+const activePanelId = ref('oc-all')
 
 const activePanel = computed(() => panels.find(p => p.id === activePanelId.value) || panels[0])
 

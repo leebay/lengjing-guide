@@ -2,19 +2,6 @@
   <div class="content-area" ref="scrollEl">
     <transition name="panel-fade" mode="out-in">
       <div v-if="panel" :key="panel.id" class="panel">
-        <!-- Cover Image -->
-        <div class="cover-wrap">
-          <img
-            class="cover-img"
-            :src="panel.cover"
-            :alt="panel.title"
-            loading="lazy"
-          />
-          <div class="cover-overlay">
-            <span class="cover-badge">{{ panel.title }}</span>
-          </div>
-        </div>
-
         <!-- Module Header -->
         <div class="module-header">
           <div class="module-icon" :style="{ background: hexToRgba(panel.iconColor, 0.12) }">
@@ -31,7 +18,8 @@
         <!-- Feature Sections -->
         <div v-for="section in panel.sections" :key="section.title" class="section">
           <div class="section-title">{{ section.title }}</div>
-          <div class="cards-grid">
+          <div v-if="section.subtitle" class="section-subtitle">{{ section.subtitle }}</div>
+          <div :class="['cards-grid', section.wide ? 'cards-grid-3' : '']">
             <FeatureCard
               v-for="(card, i) in section.cards"
               :key="i"
@@ -183,10 +171,30 @@ function hexToRgba(hex, alpha) {
   line-height: 1;
 }
 
+.section-subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: -8px;
+  margin-bottom: 14px;
+  padding-left: 15px;
+  line-height: 1.6;
+}
+
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 16px;
+}
+
+/* 建班授课等需要强制三列的 section */
+.cards-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 900px) {
+  .cards-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* Panel transition */

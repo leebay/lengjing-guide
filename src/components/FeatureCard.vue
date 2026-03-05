@@ -1,16 +1,16 @@
 <template>
-  <div class="feature-card" @click="handleClick">
-    <div v-if="card.hasVideo" class="video-badge">
-      <el-icon><VideoPlay /></el-icon>
-      教学视频
-    </div>
+  <div class="feature-card">
     <div class="card-name">{{ card.name }}</div>
     <div class="card-desc">{{ card.desc }}</div>
     <div v-if="card.tags && card.tags.length" class="card-tags">
       <span v-for="tag in card.tags" :key="tag" class="sub-tag">{{ tag }}</span>
     </div>
-    <div v-if="card.hasVideo" class="card-action">
-      <button class="watch-btn" @click.stop="handleClick">
+    <div class="card-action">
+      <button class="btn-guide" @click.stop="handleGuideClick">
+        <el-icon><Document /></el-icon>
+        图文教程
+      </button>
+      <button v-if="card.hasVideo" class="btn-video" @click.stop="handleVideoClick">
         <el-icon><CaretRight /></el-icon>
         观看视频
       </button>
@@ -20,6 +20,8 @@
 </template>
 
 <script setup>
+import { Document, CaretRight } from '@element-plus/icons-vue'
+
 const props = defineProps({
   card: {
     type: Object,
@@ -29,8 +31,12 @@ const props = defineProps({
 
 const emit = defineEmits(['open-video'])
 
-function handleClick() {
+function handleVideoClick() {
   emit('open-video', { title: props.card.videoTitle || props.card.name, desc: props.card.desc })
+}
+
+function handleGuideClick() {
+  // 图文教程功能占位
 }
 </script>
 
@@ -40,7 +46,6 @@ function handleClick() {
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 18px 20px 16px;
-  cursor: pointer;
   transition: all var(--transition);
   position: relative;
   overflow: hidden;
@@ -71,27 +76,10 @@ function handleClick() {
   transition: transform var(--transition);
 }
 
-.video-badge {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  background: linear-gradient(135deg, var(--blue), var(--teal));
-  color: #fff;
-  font-size: 11px;
-  font-weight: 500;
-  padding: 3px 8px;
-  border-radius: 20px;
-  line-height: 1;
-}
-
 .card-name {
   font-size: 15px;
   font-weight: 600;
   color: var(--text-dark);
-  padding-right: 68px;
   line-height: 1.4;
 }
 
@@ -99,6 +87,7 @@ function handleClick() {
   font-size: 13px;
   color: var(--text-muted);
   line-height: 1.7;
+  flex: 1;
 }
 
 .card-tags {
@@ -125,27 +114,56 @@ function handleClick() {
   border-color: rgba(26,111,212,.3);
 }
 
+/* Action row */
 .card-action {
-  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
 }
 
-.watch-btn {
+/* 观看视频 — 蓝色实心风格 */
+.btn-video {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  font-size: 12.5px;
+  gap: 5px;
+  font-size: 13px;
   font-family: inherit;
-  color: var(--blue);
-  background: var(--blue-light);
-  border: 1px solid rgba(26,111,212,.2);
+  color: #fff;
+  background: var(--blue);
+  border: 1px solid var(--blue);
   border-radius: var(--radius-sm);
-  padding: 4px 12px;
+  padding: 7px 14px;
   cursor: pointer;
   transition: all var(--transition);
+  line-height: 1;
 }
 
-.watch-btn:hover {
-  background: var(--blue);
-  color: #fff;
+.btn-video:hover {
+  background: #1558b0;
+  border-color: #1558b0;
+}
+
+/* 图文教程 — 线框风格，与视频按钮形成对比 */
+.btn-guide {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  font-family: inherit;
+  color: #475569;
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-sm);
+  padding: 7px 14px;
+  cursor: pointer;
+  transition: all var(--transition);
+  line-height: 1;
+}
+
+.btn-guide:hover {
+  color: var(--blue);
+  border-color: rgba(26,111,212,.4);
+  background: var(--blue-light);
 }
 </style>
