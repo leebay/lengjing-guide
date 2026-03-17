@@ -34,7 +34,7 @@ function DesktopRedirect() {
         {/* Logo */}
         <div className="w-24 h-24 mx-auto mb-8">
           <img
-            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663384561556/GfyRiHPLA62nHv5C9xohw8/lengjing-logo_072263b9.jpg"
+            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663384561556/GfyRiHPLA62nHv5C9xohw8/lengjing-logo-transparent_c7e34c63.png"
             alt="棱境Logo"
             className="w-full h-full object-contain"
           />

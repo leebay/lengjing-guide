@@ -9,7 +9,7 @@
 import { ChevronDown, Monitor } from "lucide-react";
 
 const LOGO_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663384561556/GfyRiHPLA62nHv5C9xohw8/lengjing-logo_072263b9.jpg";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663384561556/GfyRiHPLA62nHv5C9xohw8/lengjing-logo-transparent_c7e34c63.png";
 
 const BANNER_IMG =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663384561556/GfyRiHPLA62nHv5C9xohw8/hero-banner_e41dedd0.png";
