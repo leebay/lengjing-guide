@@ -31,9 +31,13 @@ function DesktopRedirect() {
       <div className="absolute top-40 right-40 w-16 h-16 border border-[#6c5ce7]/10 rotate-12 rounded-sm" />
 
       <div className="relative z-10 text-center max-w-lg px-8">
-        {/* Prism icon */}
-        <div className="w-20 h-20 mx-auto mb-8 rounded-2xl bg-gradient-to-br from-[#0078e0] to-[#00b4d8] flex items-center justify-center shadow-xl shadow-[#0078e0]/20">
-          <Monitor className="w-10 h-10 text-white" />
+        {/* Logo */}
+        <div className="w-24 h-24 mx-auto mb-8">
+          <img
+            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663384561556/GfyRiHPLA62nHv5C9xohw8/lengjing-logo_072263b9.jpg"
+            alt="棱境Logo"
+            className="w-full h-full object-contain"
+          />
         </div>
 
         <h1 className="text-3xl font-bold text-[#0a1e3d] mb-3">

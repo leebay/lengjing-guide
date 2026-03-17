@@ -1,5 +1,5 @@
 /**
- * CoursesSection — 开源课程栏目介绍
+ * CoursesSection — 开源课程与校企精品课栏目介绍
  * 光谱色：蓝色 #0078e0
  * 布局：左对齐，图片在上
  */
@@ -18,7 +18,6 @@ const features = [
   "专业核心课",
   "专业拓展课",
   "校企精品课",
-  "教材库",
 ];
 
 export default function CoursesSection() {
@@ -50,9 +49,9 @@ export default function CoursesSection() {
             <BookOpen className="w-4 h-4" style={{ color: COLOR }} />
           </div>
           <div>
-            <h2 className="text-lg font-bold text-[#0a1e3d] leading-tight">开源课程</h2>
+            <h2 className="text-lg font-bold text-[#0a1e3d] leading-tight">开源课程与校企精品课</h2>
             <p className="text-[10px] font-semibold tracking-[0.15em] mt-0.5" style={{ color: `${COLOR}99` }}>
-              OPEN COURSES
+              OPEN COURSES & ELITE COURSES
             </p>
           </div>
           <div
@@ -69,7 +68,7 @@ export default function CoursesSection() {
         >
           <img
             src={COURSE_IMG}
-            alt="开源课程"
+            alt="开源课程与校企精品课"
             className="w-full h-48 object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0078e0]/15 to-transparent" />

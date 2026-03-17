@@ -5,10 +5,10 @@
 
 const sections = [
   { id: "hero", color: "#0078e0", label: "首页" },
-  { id: "courses", color: "#0078e0", label: "开源课程" },
+  { id: "courses", color: "#0078e0", label: "课程" },
   { id: "resources", color: "#00b4d8", label: "教学资源" },
   { id: "industry", color: "#6c5ce7", label: "行业资料" },
-  { id: "enterprise", color: "#00cec9", label: "校企精品" },
+  { id: "enterprise", color: "#00cec9", label: "教材" },
   { id: "cta", color: "#f0a500", label: "前往电脑端" },
 ];
 
