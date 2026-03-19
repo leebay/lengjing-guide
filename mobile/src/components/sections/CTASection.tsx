@@ -64,7 +64,7 @@ export default function CTASection() {
             <span className="text-[#0078e0]">体验完整功能</span>
           </h2>
           <p className="text-[13px] text-[#0a1e3d]/50 max-w-[280px] leading-[1.8] mb-8">
-            资源下载、在线实训、专业规划、虚拟仿真等高级功能需在电脑端操作，以获得最佳使用体验。
+            资源下载、课程编辑、在线视频等高级操作需在电脑端进行，以获得最佳使用体验。
           </p>
 
           {/* URL display + copy */}
