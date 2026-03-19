@@ -9,7 +9,7 @@
 import { ChevronDown, Monitor } from "lucide-react";
 
 const LOGO_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663384561556/GfyRiHPLA62nHv5C9xohw8/lengjing-logo-transparent_c7e34c63.png";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663384561556/GfyRiHPLA62nHv5C9xohw8/棱境带文字logo_722340aa.png";
 
 const BANNER_IMG =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663384561556/GfyRiHPLA62nHv5C9xohw8/hero-banner_e41dedd0.png";
@@ -54,8 +54,8 @@ export default function HeroSection() {
         </div>
 
         <div className="px-6">
-          {/* Logo */}
-          <div className="w-20 h-20 mx-auto mb-4">
+          {/* Logo with text */}
+          <div className="w-40 h-auto mx-auto mb-6">
             <img
               src={LOGO_IMG}
               alt="棱境Logo"
@@ -63,17 +63,6 @@ export default function HeroSection() {
             />
           </div>
 
-          {/* Brand badge */}
-          <div className="mb-4">
-            <span className="inline-block px-4 py-1.5 rounded-full text-[11px] font-semibold tracking-widest text-[#0078e0] bg-[#0078e0]/[0.07] border border-[#0078e0]/15 uppercase">
-              低空经济职业教育
-            </span>
-          </div>
-
-          {/* Title */}
-          <h1 className="text-[2rem] font-bold tracking-tight text-[#0a1e3d] mb-2 leading-tight">
-            棱境
-          </h1>
           <p className="text-[15px] font-medium text-[#0a1e3d]/65 mb-2">
             低空教育资源共享平台
           </p>
@@ -82,7 +71,7 @@ export default function HeroSection() {
           <div className="w-24 h-[2px] mx-auto bg-gradient-to-r from-[#0078e0] via-[#00b4d8] via-[#6c5ce7] to-[#00cec9] rounded-full mb-5 animate-spectrum" />
 
           <p className="text-[13px] text-[#0a1e3d]/45 max-w-[300px] mx-auto leading-[1.8] mb-8">
-            深耕低空经济职业教育领域，为职业院校提供专业规划、课程体系、实训基地、师资培训及竞赛认证的全链路解决方案
+            打造低空经济的垂直知识平台，通过深度开发共享两大类资源，专业建设教育资源，产业行业各类资讯，致力于打通专业建设与行业发展之间的需求壁垒，辅助院校培养更多产业所需高素质人才
           </p>
 
           {/* Mobile notice card */}

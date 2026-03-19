@@ -32,9 +32,9 @@ function DesktopRedirect() {
 
       <div className="relative z-10 text-center max-w-lg px-8">
         {/* Logo */}
-        <div className="w-24 h-24 mx-auto mb-8">
+        <div className="w-32 h-auto mx-auto mb-8">
           <img
-            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663384561556/GfyRiHPLA62nHv5C9xohw8/lengjing-logo-transparent_c7e34c63.png"
+            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663384561556/GfyRiHPLA62nHv5C9xohw8/棱境带文字logo_722340aa.png"
             alt="棱境Logo"
             className="w-full h-full object-contain"
           />
